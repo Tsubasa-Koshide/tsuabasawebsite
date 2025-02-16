@@ -1,0 +1,242 @@
+/* html と body のデフォルトの余白を削除 */
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Noto Sans JP フォントを適用するクラス */
+.noto-sans-jp-header {
+  font-family: "Noto Sans JP", serif;
+  font-optical-sizing: auto;
+  font-weight: 200;
+  font-style: normal;
+}
+
+/* ヘッダー共通スタイル */
+header {
+  display: flex;
+  justify-content: space-between; /* 左と右に要素を配置 */
+  align-items: center; /* 高さを揃える */
+  padding: 20px 40px; /* ヘッダーの内側の余白 */
+  background-color:#F6F6F6; /* ヘッダーの背景色 */
+}
+
+h1 {
+  font-size: 10pt; /* フォントサイズを12ptに設定 */
+  color: #24140e; /* 初期文字色を黒に設定 */
+  margin: 0; /* デフォルトの余白を削除 */
+  font-weight: normal;
+}
+
+nav a {
+  color: #24140e; /* リンクの文字色を黒に設定 */
+  text-decoration: none; /* リンクの下線を削除 */
+  margin-left: 12px; /* リンク間の間隔 */
+  font-size: 10pt; /* リンク文字のフォントサイズを10ptに設定 */
+}
+
+/* テキスト選択時のスタイル */
+*::selection {
+  color: #68a9cf; /* 選択したテキストの文字色 */
+}
+
+/* Firefox用の選択スタイル */
+*::-moz-selection {
+  background: #68a9cf; /* 選択したテキストの背景色 */
+  color: white; /* 選択したテキストの文字色 */
+}
+
+body {
+  font-family: "Noto Sans JP", serif;
+  background-color:#F6F6F6;
+  margin: 0;
+  padding: 20px 40px;
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* ビューポート全体の高さを設定 */
+}
+
+/* メインコンテンツの調整 */
+main {
+  flex: 1; /* メインコンテンツがフッターの上に表示されるように調整 */
+}
+
+.about-section {
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  height: 50vh;
+  background-color:#F6F6F6;
+  color: #333;
+}
+
+.no-underline {
+  text-decoration: none;
+}
+
+.about-content {
+  max-width: 800px;
+  padding: 40px;
+  text-align: left; /* 左寄せに変更 */
+}
+
+.about-title {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.about-text {
+  font-size: 10pt;
+  line-height: 1.6;
+  color: #24140e;
+  white-space: pre-line; /* 改行を保持する */
+}
+
+/* public/styles.css */
+
+/* お問い合わせフォームのスタイル */
+.contact-content {
+  max-width: 800px;
+  padding: 40px;
+  text-align: left; /* 左寄せに変更 */
+}
+
+.contact-section {
+  max-width: 1000px;
+  margin: left;
+  padding: 40px;
+  background-color: transparent; /* 背景を透明に設定 */
+  border-radius: 8px;
+}
+
+/* お問い合わせフォームの内容部分 */
+.contact-content {
+  max-width: 600px; /* 最大幅を800pxに設定 */
+  padding: 40px;
+  text-align: left; /* 左寄せに変更 */
+}
+
+.contact-text {
+  font-size: 10pt;
+  line-height: 1.6;
+  color: #24140e;
+  white-space: pre-line; /* 改行を保持する */
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  margin-bottom: 10pt;
+}
+
+
+.form-group label {
+  font-size: 10pt;
+  margin-bottom: 10px;
+}
+
+/* 入力フィールドのスタイル */
+.form-group input,
+.form-group textarea {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5pt 10px; /* パディングを設定 */
+  font-size: 10pt; /* フォントサイズ */
+  border: none; /* 枠線を削除 */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+  background-color: transparent; /* 背景を透明に */
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  text-align: left; /* 左寄せ */
+  color: #24140e; /* 文字色を黒に設定 */
+}
+
+/* フォーカス時のスタイル */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom: 1px solid #68a9cf; /* フォーカス時の下線色を変更 */
+  color: #24140e; /* フォーカス時の文字色を変更 */
+}
+
+/* セレクトボックス（下線のみ） */
+.form-group select {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5pt 10px; /* パディングを設定 */
+  font-size: 10pt; /* フォントサイズ */
+  border: none; /* 枠線を削除 */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+  background-color: transparent; /* 背景を透明に */
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  text-align: left; /* 左寄せ */
+  appearance: none; /* デフォルトの矢印を削除 */
+  -webkit-appearance: none; /* Safari用 */
+  -moz-appearance: none; /* Firefox用 */
+}
+
+.form-group select {
+  width: 100%; /* 幅を100%に設定して親要素に合わせる */
+  padding: 5pt 10px; /* パディングを大きくしてボックスを大きくする */
+  font-size: 10pt; /* フォントサイズを大きくして読みやすくする */
+  border: none; /* 枠線を削除 */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+  background-color: transparent; /* 背景を透明に設定 */
+  border-radius: 0px; /* 角を丸くしない */
+  text-align: left; /* 左寄せに設定 */
+  appearance: none; /* デフォルトの矢印を削除 */
+  -webkit-appearance: none; /* Safariで矢印を削除 */
+  -moz-appearance: none; /* Firefoxで矢印を削除 */
+}
+
+.form-group select:focus {
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  border-color: #68a9cf; /* フォーカス時の枠線の色 */
+}
+
+
+
+.form-group textarea {
+  resize: vertical; /* テキストエリアのリサイズを縦方向に設定 */
+  min-height: 140px; /* 最小高さを設定してボックスの高さを調整 */
+}
+
+.submit-button {
+  background-color: transparent; /* 背景を透明に設定 */
+  color: #24140e;
+  padding: 10px 20px;
+  border: 1px solid #ccc; /* 枠線を追加 */
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 10pt;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);  /* 画面幅が768px以下の場合、2列に変更 */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-grid {
+    grid-template-columns: 1fr;  /* 画面幅が480px以下の場合、1列に変更 */
+  }
+}
+
+/* フッターのスタイル */
+.footer {
+  background-color: transparent; /* 背景を透明に設定 */
+  color: black;
+  text-align: left;
+  padding: 2px 40px;
+  position: fixed; /* スクロールしてもフッターが下部に固定 */
+  bottom: 0;
+  width: 100%;
+  font-size: 10pt;
+}

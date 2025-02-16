@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="Astro.generator" />
+    <title>Astro</title>
+
+    <!-- Google Fonts から Noto Sans をインポート -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    
+    
+    <!-- 共通のスタイルシートを読み込む -->
+    <link rel="stylesheet" href="src/pages/style.css" />
+
+  </head>
+  <body>
+    <header>
+        <style>
+      /* ボディの背景色を設定 */
+      body {
+        background-color:#F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
+      }
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">/* フォント設定 */
+    </style>
+       <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
+      <nav>
+        <a href="index.html">Home</a> <a href="src/pages/index.astro">
+        <a href="about.html">About</a> <a href="src/pages/about.astro">
+        <a href="contact.html">Contact</a><a href="src/pages/contact.astro">
+        <a href="https://takstudio.base.shop/" target="_blank" rel="noopener noreferrer">shop</a>
+        <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
+
+      </nav>
+    </header>
+
+<body>
+  <header>
+    <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
+    <nav>
+      <a href="src/pages/index.astro">Home</a>
+      <a href="about.html">About</a> <a href="src/pages/about.astro">
+      <a href="src/pages/contact.astro">Contact</a>
+      <a href="#">Shop</a>
+      <a href="#">TAK Studio</a>
+    </nav>
+  </header>
+
+  <main class="contact-section">
+    <h1 class="contact-title"><br><br>
+      デザインに関する質問/お問い合わせ、取材の依頼<br>
+      TAK STUDIOやFRAMEsに関することもこちらにお願いします。<br><br>
+      もし2-3営業日を過ぎても返信ない場合はお手数ですが再度送付していただく<br>
+      または各種SNSのDMにてお問い合わせいただけますと幸いです。<br><br><br><br>
+
+      Design questions/enquiries and interview requests<br>
+Please also send any enquiries about TAK STUDIO or FRAMEs here.<br>
+<br>
+If you do not receive a reply after 2-3 working days, please send us your enquiry again or DM us on our social networking sites.<br><br><br><br>
+    </h1>
+
+    <form action="/submit-contact" method="POST" class="contact-form">
+      <div class="form-group">
+        <label for="name">お名前 / name</label>
+        <input type="text" id="name" name="name" required placeholder=" ">
+      </div>
+
+      <div class="form-group">
+        <label for="email">メールアドレス / mailadress</label>
+        <input type="email" id="email" name="email" required placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="budget">ご予算 / budget</label>
+        <input type="text" id="budget" name="budget" required placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="deadline">希望納期 / deadline</label>
+        <input type="text" id="deadline" name="deadline" required placeholder="">
+      </div>
+
+      <div class="form-group">
+        <label for="subject">タイトル / subject</label>
+       <select name="your-choice" id="your-choice">
+  <option value="" disabled selected>こちらからお選びください</option>
+          <option value="design">プロダクトデザインのご相談/ industrial design</option>
+          <option value="web">ブランディングデザインのご相談/ branding design</option>
+          <option value="branding">CGについてのご相談/ CGI graphic</option>
+          <option value="branding">FRAMEsに関するご相談/ FRAMEs</option>
+          <option value="other">その他/ other</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="message">本文 / message</label>
+        <textarea id="message" name="message" rows="5" required placeholder=""></textarea>
+      </div>
+
+      <button type="submit" class="submit-button">送信</button>
+    </form>
+  </main>
+
+  <footer class="footer">
+    <p>©tsubasa koshide 2025</p>
+  </footer>
+
+</body>
+
+</html>
