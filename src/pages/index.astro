@@ -1,16 +1,46 @@
----
-
----
-
+<!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content="Astro.generator" />
+    <title>Astro</title>
+
+    <!-- Google Fonts から Noto Sans をインポート -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+
+    
+    
+    <!-- 共通のスタイルシートを読み込む -->
+    <link rel="stylesheet" href="src/pages/style.css" />
+
+  </head>
+  <body>
+    <header>
+        <style>
+      /* ボディの背景色を設定 */
+      body {
+        background-color:#F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
+      }
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">/* フォント設定 */
+    </style>
+       <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
+      <nav>
+        <a href="index.html">Home</a> <a href="src/pages/index.astro">
+        <a href="about.html">About</a> <a href="src/pages/about.astro">
+        <a href="contact.html">Contact</a><a href="src/pages/contact.astro">
+        <a href="https://takstudio.base.shop/" target="_blank" rel="noopener noreferrer">shop</a>
+        <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
+
+      </nav>
+    </header>
+
+    <main>
+      <h2>Welcome to my website!</h2>
+      <p>This is the homepage content.</p>
+      
+    </main>
+  </body>
 </html>
