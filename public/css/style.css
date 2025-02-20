@@ -12,12 +12,12 @@ header {
   display: flex;
   justify-content: space-between; /* 左と右に要素を配置 */
   align-items: center; /* 高さを揃える */
-  padding: 20px 40px; /* ヘッダーの内側の余白 */
+  padding: 10px 40px; /* ヘッダーの内側の余白 */
   background-color: #F6F6F6; /* ヘッダーの背景色 */
 }
 
 h1 {
-  font-size: 10pt; /* フォントサイズを12ptに設定 */
+  font-size: 9pt; /* フォントサイズを12ptに設定 */
   color: #24140e; /* 初期文字色を黒に設定 */
   margin: 0; /* デフォルトの余白を削除 */
   font-weight: normal;
@@ -26,7 +26,7 @@ h1 {
 nav a {
   color: #24140e; /* リンクの文字色を黒に設定 */
   text-decoration: none; /* リンクの下線を削除 */
-  margin-left: 12px; /* リンク間の間隔 */
+  margin-left: 10px; /* リンク間の間隔 */
   font-size: 10pt; /* リンク文字のフォントサイズを10ptに設定 */
 }
 
@@ -56,7 +56,7 @@ main {
 .section {
   max-width: 800px; /* 統一 */
   margin: 0 auto; /* 中央寄せ */
-  padding: 40px; /* 統一 */
+  padding: 20px; /* 統一 */
 }
 
 /* Aboutページ */
@@ -71,19 +71,19 @@ main {
 
 .about-content {
   max-width: 800px;
-  padding: 40px; /* ここを統一 */
+  padding: 20px; /* ここを統一 */
   text-align: left;
   display: block;
 }
 
 .about-title {
-  font-size: 2.5rem;
+  font-size: 9pt;
   margin-bottom: 20px;
   color: #333;
 }
 
 .about-text {
-  font-size: 10pt;
+  font-size: 9pt;
   line-height: 1.6;
   color: #24140e;
   white-space: pre-line !important;
@@ -97,7 +97,7 @@ main {
 }
 
 .contact-text {
-  font-size: 10pt;
+  font-size: 9pt;
   line-height: 1.6;
   color: #24140e;
   white-space: pre-line; /* 改行を保持する */
