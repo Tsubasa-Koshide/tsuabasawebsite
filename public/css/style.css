@@ -20,6 +20,24 @@ h1 {
   font-weight: normal;
 }
 
+nav a {
+  color: #24140e; /* リンクの文字色を黒に設定 */
+  text-decoration: none; /* リンクの下線を削除 */
+  margin-left: 12px; /* リンク間の間隔 */
+  font-size: 10pt; /* リンク文字のフォントサイズを10ptに設定 */
+}
+
+/* テキスト選択時のスタイル */
+*::selection {
+  color: #68a9cf; /* 選択したテキストの文字色 */
+}
+
+/* Firefox用の選択スタイル */
+*::-moz-selection {
+  background: #68a9cf; /* 選択したテキストの背景色 */
+  color: white; /* 選択したテキストの文字色 */
+}
+
 body {
   font-family: "Noto Sans JP", serif;
   background-color: #F6F6F6;
@@ -89,6 +107,8 @@ main {
   max-width: 800px; /* 統一 */
   padding: 40px; /* ここを統一 */
   text-align: left;
+  justify-content: left;
+  align-items: left;
 }
 
 .contact-form {
