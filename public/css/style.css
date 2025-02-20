@@ -2,6 +2,9 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 /* ヘッダー共通スタイル */
@@ -10,7 +13,7 @@ header {
   justify-content: space-between; /* 左と右に要素を配置 */
   align-items: center; /* 高さを揃える */
   padding: 20px 40px; /* ヘッダーの内側の余白 */
-  background-color:#F6F6F6; /* ヘッダーの背景色 */
+  background-color: #F6F6F6; /* ヘッダーの背景色 */
 }
 
 h1 {
@@ -41,16 +44,12 @@ nav a {
 body {
   font-family: "Noto Sans JP", serif;
   background-color: #F6F6F6;
-  margin: 0;
-  padding: 20px 40px; /* 共通の余白設定 */
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+  flex: 1;
 }
 
 /* メインコンテンツ */
 main {
-  flex: 1;
+  flex: 1; /* フッターを押し下げる */
 }
 
 /* About・Contact共通の余白調整 */
@@ -203,9 +202,7 @@ main {
   background-color: transparent; /* 背景を透明に設定 */
   color: black;
   text-align: left;
-  padding: 2px 40px;
-  position: fixed; /* スクロールしてもフッターが下部に固定 */
-  bottom: 0;
+  padding: 10px 40px;
   width: 100%;
   font-size: 10pt;
 }
