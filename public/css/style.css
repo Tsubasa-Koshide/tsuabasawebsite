@@ -33,7 +33,7 @@ nav a {
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: 40px; /* 左寄せ */
   padding: 20px;
 }
 
@@ -117,7 +117,8 @@ nav a {
   width: 100%;
   padding: 10px;
   margin-top: 5px;
-  border: 1px solid #ccc;
+  border: none; /* ボーダーを完全になくす */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
   background-color: transparent;
   text-align: left;
   color: #24140e;
