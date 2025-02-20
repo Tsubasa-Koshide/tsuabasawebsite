@@ -115,6 +115,7 @@ main {
 .contact-form {
   display: flex;
   flex-direction: column;
+  width: 100%; /* 幅を100%に設定 */
 }
 
 /* スマホ用レスポンシブデザイン */
@@ -152,6 +153,7 @@ main {
 .form-group textarea:focus {
   border-bottom: 1px solid #68a9cf; /* フォーカス時の下線色を変更 */
   color: #24140e; /* フォーカス時の文字色を変更 */
+  width: 100%; /* 幅を100%に設定 */
 }
 
 /* セレクトボックス（下線のみ） */
