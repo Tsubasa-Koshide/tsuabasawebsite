@@ -4,6 +4,22 @@ html, body {
   padding: 0;
 }
 
+/* ヘッダー共通スタイル */
+header {
+  display: flex;
+  justify-content: space-between; /* 左と右に要素を配置 */
+  align-items: center; /* 高さを揃える */
+  padding: 20px 40px; /* ヘッダーの内側の余白 */
+  background-color:#F6F6F6; /* ヘッダーの背景色 */
+}
+
+h1 {
+  font-size: 10pt; /* フォントサイズを12ptに設定 */
+  color: #24140e; /* 初期文字色を黒に設定 */
+  margin: 0; /* デフォルトの余白を削除 */
+  font-weight: normal;
+}
+
 body {
   font-family: "Noto Sans JP", serif;
   background-color: #F6F6F6;
