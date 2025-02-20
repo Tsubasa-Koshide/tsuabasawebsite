@@ -53,21 +53,29 @@ main {
 }
 
 /* About・Contact共通の余白調整 */
-.section {
-  max-width: 800px; /* 統一 */
-  margin: left
-  padding: 20px; /* 統一 */
+.section, .about-section, .contact-section {
+  max-width: 800px;
+  margin: 0 auto; /* 左右の余白を均等にする */
+  padding: 20px; /* 余白を統一 */
+}
+
+.about-section, .contact-section {
+  display: flex;
+  justify-content: center; /* 中央寄せ */
+  align-items: flex-start;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-content, .contact-content {
+  display: flex; /* フレックスボックスを適用 */
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
 }
 
 /* Aboutページ */
-.about-section {
-  display: flex;
-  justify-content: left;
-  align-items: left;
-  height: auto;
-  background-color: #F6F6F6;
-  color: #333;
-}
 
 .about-content {
   max-width: 800px;
@@ -89,11 +97,6 @@ main {
 }
 
 /* Contactページ */
-.contact-section {
-  max-width: 800px; /* 統一 */
-  margin: left;
-  padding: 40px; /* ここを統一 */
-}
 
 .contact-text {
   font-size: 10pt;
@@ -124,16 +127,12 @@ main {
     padding: 15px; /* スマホ用の余白を統一 */
   }
 
-  .about-section,
-  .contact-section {
-    padding: 15px; /* スマホ時の余白を共通化 */
+  @media (max-width: 768px) {
+    .about-section,
+    .contact-section {
+      padding: 15px; /* 統一 */
+    }
   }
-
-  .about-content,
-  .contact-content {
-    padding: 15px; /* スマホ時の余白を共通化 */
-  }
-}
 
 .form-group input,
 .form-group textarea {
