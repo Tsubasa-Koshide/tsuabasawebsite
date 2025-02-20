@@ -33,7 +33,7 @@ nav a {
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
-  margin-left: 40px; /* 左寄せ */
+  margin-left: 20px; /* 左寄せ */
   padding: 20px;
 }
 
@@ -90,16 +90,19 @@ nav a {
   }
 
   .section {
+    margin-left: 10px; /* スマホ版では狭く */
     padding: 15px; /* スマホ用の余白 */
   }
 
   .about-section,
   .contact-section {
+    margin-left: 10px; /* スマホ版では狭く */
     padding: 15px; /* 余白を統一 */
   }
 
   .about-content,
   .contact-content {
+    max-width: 100%; /* スマホ版では横幅を広げる */
     padding: 15px; /* 余白を統一 */
   }
 }
