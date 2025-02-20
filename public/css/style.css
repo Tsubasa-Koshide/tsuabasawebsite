@@ -86,8 +86,8 @@ nav a {
 /* スマホ用レスポンシブデザイン */
   @media (max-width: 768px) {
     .section, .about-section, .contact-section {
-      margin-left: 15px; /* スマホ版では狭く */
-      padding: 15px; /* 余白を調整 */
+      margin-left: 10px; /* スマホ版では狭く */
+      padding: 5px; /* 余白を調整 */
     }
   
     .about-content, .contact-content {
