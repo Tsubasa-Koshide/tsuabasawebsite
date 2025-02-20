@@ -1,45 +1,14 @@
-/* デフォルトの設定 */
+/* 共通スタイル */
 html, body {
   margin: 0;
   padding: 0;
-}
-
-/* Noto Sans JP フォント */
-.noto-sans-jp-header {
-  font-family: "Noto Sans JP", serif;
-  font-optical-sizing: auto;
-  font-weight: 200;
-  font-style: normal;
-}
-
-/* ヘッダー */
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #F6F6F6;
-}
-
-h1 {
-  font-size: 10pt;
-  color: #24140e;
-  margin: 0;
-  font-weight: normal;
-}
-
-nav a {
-  color: #24140e;
-  text-decoration: none;
-  margin-left: 12px;
-  font-size: 10pt;
 }
 
 body {
   font-family: "Noto Sans JP", serif;
   background-color: #F6F6F6;
   margin: 0;
-  padding: 20px 40px;
+  padding: 20px 40px; /* 共通の余白設定 */
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -50,20 +19,26 @@ main {
   flex: 1;
 }
 
-/* about セクション */
+/* About・Contact共通の余白調整 */
+.section {
+  max-width: 800px; /* 統一 */
+  margin: 0 auto; /* 中央寄せ */
+  padding: 40px; /* 統一 */
+}
+
+/* Aboutページ */
 .about-section {
   display: flex;
   justify-content: left;
   align-items: left;
-  height: auto; /* 高さを自動調整 */
-  padding: 20px 40px;
+  height: auto;
   background-color: #F6F6F6;
   color: #333;
 }
 
 .about-content {
   max-width: 800px;
-  padding: 20px; /* モバイルで余白を小さく */
+  padding: 40px; /* ここを統一 */
   text-align: left;
   display: block;
 }
@@ -81,17 +56,17 @@ main {
   white-space: pre-line !important;
 }
 
-/* お問い合わせフォーム */
-.contact-content {
-  max-width: 800px;
-  padding: 20px;
-  text-align: left;
+/* Contactページ */
+.contact-section {
+  max-width: 800px; /* 統一 */
+  margin: 0 auto;
+  padding: 40px; /* ここを統一 */
 }
 
-.contact-section {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 20px;
+.contact-content {
+  max-width: 800px; /* 統一 */
+  padding: 40px; /* ここを統一 */
+  text-align: left;
 }
 
 .contact-form {
@@ -99,34 +74,96 @@ main {
   flex-direction: column;
 }
 
-.form-group {
-  margin-bottom: 10pt;
-}
-
 /* スマホ用レスポンシブデザイン */
 @media (max-width: 768px) {
   body {
-    padding: 10px 20px; /* スマホ時の余白を減らす */
+    padding: 10px 20px;
   }
 
-  header {
-    padding: 10px 20px; /* ヘッダーの余白を調整 */
+  .section {
+    padding: 20px; /* スマホ用の余白を統一 */
   }
 
-  .about-section {
-    padding: 10px 20px; /* スマホ時の余白を調整 */
-  }
-
-  .about-content {
-    padding: 10px; /* スマホ時の余白をさらに削減 */
-  }
-
-  .contact-content {
-    padding: 10px; /* お問い合わせフォームの余白を小さく */
-  }
-
+  .about-section,
   .contact-section {
-    max-width: 100%;
-    padding: 10px;
+    padding: 20px; /* スマホ時の余白を共通化 */
   }
+
+  .about-content,
+  .contact-content {
+    padding: 20px; /* スマホ時の余白を共通化 */
+  }
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5pt 10px; /* パディングを設定 */
+  font-size: 10pt; /* フォントサイズ */
+  border: none; /* 枠線を削除 */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+  background-color: transparent; /* 背景を透明に */
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  text-align: left; /* 左寄せ */
+  color: #24140e; /* 文字色を黒に設定 */
+}
+
+/* フォーカス時のスタイル */
+.form-group input:focus,
+.form-group textarea:focus {
+  border-bottom: 1px solid #68a9cf; /* フォーカス時の下線色を変更 */
+  color: #24140e; /* フォーカス時の文字色を変更 */
+}
+
+/* セレクトボックス（下線のみ） */
+.form-group select {
+  width: 100%; /* 幅を100%に設定 */
+  padding: 5pt 10px; /* パディングを設定 */
+  font-size: 10pt; /* フォントサイズ */
+  border: none; /* 枠線を削除 */
+  border-bottom: 1px solid #ccc; /* 下線を追加 */
+  background-color: transparent; /* 背景を透明に */
+  text-align: left; /* 左寄せ */
+  appearance: none; /* デフォルトの矢印を削除 */
+  -webkit-appearance: none; /* Safari用 */
+  -moz-appearance: none; /* Firefox用 */
+}
+
+.form-group select:focus {
+  outline: none; /* フォーカス時のアウトラインを削除 */
+  border-color: #68a9cf; /* フォーカス時の枠線の色 */
+}
+
+.form-group textarea {
+  resize: vertical; /* テキストエリアのリサイズを縦方向に設定 */
+  min-height: 140px; /* 最小高さを設定してボックスの高さを調整 */
+}
+
+.submit-button {
+  background-color: transparent; /* 背景を透明に設定 */
+  color: #24140e;
+  padding: 10px 20px;
+  border: 1px solid #ccc; /* 枠線を追加 */
+  border-radius: 0px;
+  cursor: pointer;
+  font-size: 10pt;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.image-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* フッターのスタイル */
+.footer {
+  background-color: transparent; /* 背景を透明に設定 */
+  color: black;
+  text-align: left;
+  padding: 2px 40px;
+  position: fixed; /* スクロールしてもフッターが下部に固定 */
+  bottom: 0;
+  width: 100%;
+  font-size: 10pt;
 }
