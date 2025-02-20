@@ -84,26 +84,16 @@ nav a {
 }
 
 /* スマホ用レスポンシブデザイン */
-@media (max-width: 768px) {
-  body {
-    padding: 10px 15px;
+  @media (max-width: 768px) {
+    .section, .about-section, .contact-section {
+      margin-left: 15px; /* スマホ版では狭く */
+      padding: 15px; /* 余白を調整 */
+    }
+  
+    .about-content, .contact-content {
+      max-width: 100%; /* スマホ版では横幅を広げる */
+    }
   }
-
-  .section {
-    margin-left: 10px; /* スマホ版では狭く */
-    padding: 15px; /* スマホ用の余白 */
-  }
-
-  .about-section,
-  .contact-section {
-    margin-left: 10px; /* スマホ版では狭く */
-  }
-
-  .about-content,
-  .contact-content {
-    max-width: 100%; /* スマホ版では横幅を広げる */
-  }
-}
 
 /* フォームグループ */
 .form-group {
