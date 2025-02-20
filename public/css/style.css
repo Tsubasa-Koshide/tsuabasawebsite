@@ -90,7 +90,7 @@ nav a {
       padding: 3px 5px; /* 左右の余白を減らしてヘッダーを広げる */
     }
 
-    .section, .about-section, .contact-section, .footer-section {
+    .section, .about-section, .contact-section {
       width: 95%; /* スマホではもう少し広げる */
       margin: 0 auto; /* 中央揃え */
       padding: 3px; /* スペースを調整 */
@@ -100,6 +100,11 @@ nav a {
     .about-content, .contact-content {
       max-width: 100%; /* スマホ版では横幅を広げる */
     }
+
+    .footer{
+    padding: 3px 5px; /* 余白を調整 */
+    text-align: left; /* スマホ版では中央寄せ（必要なら） */
+  }
   }
 
 /* フォームグループ */
