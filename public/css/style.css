@@ -105,9 +105,10 @@ main {
 .contact-content {
   max-width: 800px; /* 統一 */
   padding: 40px; /* ここを統一 */
-  text-align: left;
-  justify-content: left;
-  align-items: left;
+  text-align: left; /* テキストを左寄せ */
+  display: block; /* ブロックレベル要素として配置 */
+  justify-content: flex-start; /* 上寄せ */
+  align-items: flex-start; /* 左寄せ */
 }
 
 .contact-form {
@@ -118,21 +119,21 @@ main {
 /* スマホ用レスポンシブデザイン */
 @media (max-width: 768px) {
   body {
-    padding: 10px 20px;
+    padding: 10px 15px;
   }
 
   .section {
-    padding: 20px; /* スマホ用の余白を統一 */
+    padding: 15px; /* スマホ用の余白を統一 */
   }
 
   .about-section,
   .contact-section {
-    padding: 20px; /* スマホ時の余白を共通化 */
+    padding: 15px; /* スマホ時の余白を共通化 */
   }
 
   .about-content,
   .contact-content {
-    padding: 20px; /* スマホ時の余白を共通化 */
+    padding: 15px; /* スマホ時の余白を共通化 */
   }
 }
 
@@ -140,7 +141,7 @@ main {
 .form-group textarea {
   width: 100%; /* 幅を100%に設定 */
   padding: 5pt 10px; /* パディングを設定 */
-  font-size: 10pt; /* フォントサイズ */
+  font-size: 8pt; /* フォントサイズ */
   border: none; /* 枠線を削除 */
   border-bottom: 1px solid #ccc; /* 下線を追加 */
   background-color: transparent; /* 背景を透明に */
@@ -191,11 +192,6 @@ main {
   transition: background-color 0.3s, color 0.3s;
 }
 
-.image-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-}
 
 /* フッターのスタイル */
 .footer {
