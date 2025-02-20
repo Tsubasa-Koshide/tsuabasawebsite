@@ -63,6 +63,12 @@ main {
   padding: 40px; /* ここを統一 */
 }
 
+.contact-text {
+  font-size: 10pt;
+  line-height: 1.6;
+  color: #24140e;
+  white-space: pre-line; /* 改行を保持する */
+}
 .contact-content {
   max-width: 800px; /* 統一 */
   padding: 40px; /* ここを統一 */
