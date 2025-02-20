@@ -90,7 +90,7 @@ nav a {
       padding: 3px 5px; /* 左右の余白を減らしてヘッダーを広げる */
     }
 
-    .section, .about-section, .contact-section {
+    .section, .about-section, .contact-section, .footer-section {
       width: 95%; /* スマホではもう少し広げる */
       margin: 0 auto; /* 中央揃え */
       padding: 3px; /* スペースを調整 */
