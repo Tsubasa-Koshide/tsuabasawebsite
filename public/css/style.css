@@ -1,7 +1,7 @@
 /* 共通スタイル */
 html, body {
   margin: 0;
-  padding: 20px; /* 外側の余白 */
+  padding: 20px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -33,12 +33,14 @@ nav a {
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
-  margin: 0 auto; /* 左右の余白を自動調整 */
-  padding: 20px; /* 内側の余白 */
+  margin: 0 auto;
+  padding: 20px;
 }
 
+/* Aboutページ */
 .about-section, .contact-section {
   display: flex;
+  flex-direction: column; /* 縦並びに設定 */
   justify-content: flex-start; /* 左寄せ */
   align-items: flex-start;
   width: 100%;
@@ -78,6 +80,7 @@ nav a {
   display: flex;
   flex-direction: column;
   width: 100%;
+  margin-top: 20px; /* フォームと本文の間にスペース */
 }
 
 /* スマホ用レスポンシブデザイン */
@@ -104,7 +107,7 @@ nav a {
 /* フォームグループ */
 .form-group {
   display: flex;
-  flex-direction: column; /* フォーム項目を縦並びに */
+  flex-direction: column; /* フォーム項目を縦に並べる */
   margin-bottom: 15px;
 }
 
