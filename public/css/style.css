@@ -87,7 +87,7 @@ nav a {
 /* スマホ用レスポンシブデザイン */
   @media (max-width: 768px) {
     header {
-      padding: 3px 10px; /* 左右の余白を減らしてヘッダーを広げる */
+      padding: 3px 5px; /* 左右の余白を減らしてヘッダーを広げる */
     }
 
     .section, .about-section, .contact-section {
