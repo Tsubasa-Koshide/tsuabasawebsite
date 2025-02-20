@@ -14,6 +14,7 @@ header {
   align-items: center;
   padding: 20px 40px;
   background-color: #F6F6F6;
+  width: 100%; /* ヘッダーを横いっぱいに */
 }
 
 h1 {
@@ -85,10 +86,14 @@ nav a {
 
 /* スマホ用レスポンシブデザイン */
   @media (max-width: 768px) {
+    header {
+      padding: 15px 20px; /* 左右の余白を減らしてヘッダーを広げる */
+    }
+
     .section, .about-section, .contact-section {
       width: 95%; /* スマホではもう少し広げる */
       margin: 0 auto; /* 中央揃え */
-      padding: 10px; /* スペースを調整 */
+      padding: 5px; /* スペースを調整 */
     }
   
   
