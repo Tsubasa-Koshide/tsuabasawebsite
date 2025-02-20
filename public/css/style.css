@@ -97,13 +97,11 @@ nav a {
   .about-section,
   .contact-section {
     margin-left: 10px; /* スマホ版では狭く */
-    padding: 15px; /* 余白を統一 */
   }
 
   .about-content,
   .contact-content {
     max-width: 100%; /* スマホ版では横幅を広げる */
-    padding: 15px; /* 余白を統一 */
   }
 }
 
