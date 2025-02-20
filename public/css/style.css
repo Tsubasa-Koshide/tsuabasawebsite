@@ -55,7 +55,7 @@ main {
 /* About・Contact共通の余白調整 */
 .section {
   max-width: 800px; /* 統一 */
-  margin: 0 auto; /* 中央寄せ */
+  margin: left
   padding: 20px; /* 統一 */
 }
 
@@ -71,7 +71,6 @@ main {
 
 .about-content {
   max-width: 800px;
-  padding: 20px; /* ここを統一 */
   text-align: left;
   display: block;
 }
@@ -92,7 +91,7 @@ main {
 /* Contactページ */
 .contact-section {
   max-width: 800px; /* 統一 */
-  margin: 0 auto;
+  margin: left;
   padding: 40px; /* ここを統一 */
 }
 
@@ -104,7 +103,6 @@ main {
 }
 .contact-content {
   max-width: 800px; /* 統一 */
-  padding: 40px; /* ここを統一 */
   text-align: left; /* テキストを左寄せ */
   display: block; /* ブロックレベル要素として配置 */
   justify-content: flex-start; /* 上寄せ */
