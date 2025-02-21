@@ -1,0 +1,23 @@
+---
+const { title, slug, thumbnail, description } = Astro.props;
+---
+<a href={`/projects/${slug}`} class="project-card">
+  <img src={thumbnail} alt={title} />
+  <h3>{title}</h3>
+  <p>{description}</p>
+</a>
+
+<style>
+  .project-card {
+    display: block;
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .project-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+</style>
