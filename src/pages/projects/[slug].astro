@@ -4,7 +4,6 @@ import projects from "../content/projects.json";
 // src/pages/projects/[slug].astro -> src/configs/projects.json
 // ディレクトリを2階層上に戻る必要がある
 // pages/ -> src/ -> configs/
----
 
 export async function getStaticPaths() {
   return projects.map((project) => {
