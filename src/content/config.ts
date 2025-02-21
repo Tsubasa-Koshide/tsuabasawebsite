@@ -1,13 +1,5 @@
-// src/content/config.ts
-import { defineCollection, z } from 'astro:content';
+import { defineConfig } from 'astro/config';
 
-const projects = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    image: z.string(),
-    slug: z.string(),
-  }),
+export default defineConfig({
+  // 必要な設定や他のインテグレーションをここに記述
 });
-
-export const collections = { projects };
