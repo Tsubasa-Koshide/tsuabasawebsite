@@ -40,10 +40,16 @@ import projects from "../content/projects.json";
   <div class="masonry-container">
     {projects.map((project) => (
       <a href={`/projects/${project.slug}`} class="project-card">
-        <img src={project.image} alt={project.title} />
+        <img src={project.image[0]} alt={project.title} />
         <h2>{project.title}</h2>
       </a>
     ))}
   </div>
+
+  
+  <footer class="footer">
+    <p>©tsubasa koshide 2025</p>
+  </footer>
+
 </body>
 </html>

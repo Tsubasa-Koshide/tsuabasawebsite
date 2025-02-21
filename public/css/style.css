@@ -3,9 +3,16 @@ html, body {
   margin: 0;
   padding: 20px;
   height: 100%;
-  display: flex;
   flex-direction: column;
   align-items: center; /* 中央揃え */
+}
+
+/* [slug].astro のテキストをすべて 10pt にする */
+main {
+  width: calc(100% - 40px); /* ヘッダーと同じ計算 */
+  margin: 0 auto;          /* 中央寄せ */
+  padding: 20px;           /* ヘッダーと同じパディング */
+  font-size: 10pt;
 }
 
 /* ヘッダー共通スタイル */
@@ -70,20 +77,22 @@ nav a {
   margin: 10pt auto; /* ✅ 中央揃え & 上下余白 */
 }
 
-.project-card {
-  display: block;
-  width: 100%;
-  margin-bottom: 5px;
-  break-inside: avoid;
-  margin: 10pt auto; /* ✅ 中央揃え & 上下余白 */
-}
-
 .project-card img {
   width: 100%; /* ✅ 画像の幅を最大化 */
   height: auto;
   border: none;
   box-shadow: none;
   border-radius: 0;
+}
+
+.project-card a,
+.project-card a:link,
+.project-card a:visited,
+.project-card a:hover,
+.project-card a:active,
+.project-card a:focus {
+  text-decoration: none;
+  color: #000;
 }
 
 /* ✅ 画像の下のタイトルを10ptにする */
@@ -103,19 +112,17 @@ nav a {
 
 .image-gallery {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 10px;
+  flex-direction: column; /* 縦に並べる */
+  gap: 30px;              /* 画像同士の隙間を30px */
+  margin: 0 auto;         /* 中央寄せ */
+  max-width: 800px;       /* 画像の最大横幅を800pxにしたい例 */
+  width: 100%;            /* 画面が狭いときは縮小 */
 }
 
-.image-gallery img {
+.gallery-item {
   width: 100%;
-  max-width: 400px; /* ✅ すべての画像の幅を最大400pxに統一 */
   height: auto;
-  object-fit: cover; /* ✅ 画像が変形しないようにする */
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
+  display: block;
 }
 
 .project-caption {
@@ -156,7 +163,7 @@ nav a {
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
-  margin-left: 20px; /* 左寄せ */
+  margin-left: 0; /* 左寄せ */
   padding: 20px;
 }
 

@@ -56,10 +56,27 @@ const { project } = Astro.props;
         <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
       </nav>
     </header>
-    <main>
-      <h1>{project.title}</h1>
-      <p>{project.description}</p>
-      <img src={project.image} alt={project.title} />
-    </main>
+<main>
+  <h1>{project.title}</h1>
+  <p style="white-space: pre-line;">{project.description}</p>
+  <div class="image-gallery">
+    {project.image?.map((imgPath, i) => (
+      <img
+        key={i}
+        src={imgPath}
+        alt={`${project.title} image ${i + 1}`}
+        class="gallery-item"
+        style="max-width: 100%; height: auto; display: block; margin: 0 auto;"
+      />
+    ))}
+  </div>
+</main>
+
+  <footer class="footer">
+    <p>©tsubasa koshide 2025</p>
+  </footer>
+
+
+
   </body>
 </html>
