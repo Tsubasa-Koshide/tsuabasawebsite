@@ -1,0 +1,54 @@
+---
+import fs from "fs";
+import path from "path";
+
+export function getStaticPaths() {
+  const baseDir = path.resolve("public/photo");
+
+  if (!fs.existsSync(baseDir)) {
+    console.error("❌ Error: public/photo ディレクトリが見つかりません！");
+    return [];
+  }
+
+  const projects = fs.readdirSync(baseDir)
+    .filter(folder => fs.statSync(path.join(baseDir, folder)).isDirectory());
+
+  return projects.map(slug => ({
+    params: { slug } // ✅ `params.slug` を明示的に設定
+  }));
+}
+
+// ✅ `Astro.params.slug` を確実に取得
+const { slug } = Astro.params;
+
+if (!slug) {
+  throw new Error("❌ Error: slug is undefined. Check if the URL is correct.");
+}
+
+const imageDir = path.resolve(`public/photo/${slug}`);
+const images = fs.existsSync(imageDir)
+  ? fs.readdirSync(imageDir)
+      .filter(file => file.endsWith(".jpeg") || file.endsWith(".jpg"))
+      .map(file => `/photo/${slug}/${file}`)
+  : [];
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="utf-8" />
+    <title>{slug} の詳細</title> <!-- ✅ ここでのみ slug を使用！ -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    <h1>{slug}</h1>
+    <div class="image-gallery">
+      {images.length > 0 ? (
+        images.map(image => <img src={image} alt={slug} />)
+      ) : (
+        <p>画像が見つかりませんでした。</p>
+      )}
+    </div>
+    <a href="/">← 戻る</a>
+</body>
+</html>

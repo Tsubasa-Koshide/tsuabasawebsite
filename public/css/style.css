@@ -60,6 +60,30 @@ nav a {
   color: white; /* 選択したテキストの文字色 */
 }
 
+.masonry-container {
+  column-count: 3;
+  column-gap: 10px;
+  padding: 10px;
+  max-width: 1200px; /* ✅ 最大幅を指定して3列を維持 */
+  margin: auto; /* ✅ 画面中央に配置 */
+}
+
+.project-card {
+  display: block; /* ✅ `inline-block` ではなく `block` にする */
+  width: 100%;
+  margin-bottom: 10px;
+  break-inside: avoid;
+}
+
+.project-card img {
+  width: 100%; /* ✅ 画像の幅を最大化 */
+  height: auto;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
