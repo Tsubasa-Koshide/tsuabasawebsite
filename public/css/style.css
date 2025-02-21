@@ -116,21 +116,21 @@ nav a {
 /* スマホ用レスポンシブデザイン */
 @media (max-width: 768px) {
   body {
-    padding: 0 10px; /* 左右の余白を狭めて幅を広げる */
+    padding: 0 5px; /* 左右の余白を狭めて幅を広げる */
   }
 
   header {
-    padding: 0 10px; /* ヘッダーとボディのpaddingを統一 */
+    padding: 0 5px; /* ヘッダーとボディのpaddingを統一 */
   }
 
   .section, .about-section, .contact-section {
     width: 98%; /* スマホ版で少し広げる */
     margin: 0 auto; /* 中央揃え */
-    padding: 10px 15px; /* 左右の余白を調整 */
+    padding: 0px 5px; /* 左右の余白を調整 */
   }
 
   .footer {
-    padding: 10px 15px; /* フッターの余白を調整 */
+    padding: 0px 5px; /* フッターの余白を調整 */
   }
 
   nav a {
