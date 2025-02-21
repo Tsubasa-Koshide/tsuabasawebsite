@@ -1,7 +1,7 @@
-import { defineCollection, z } from "astro:content";
+import { defineConfig } from 'astro/config';
+import { defineCollection, z } from '@astro/content';
 
 const projects = defineCollection({
-  type: "content",
   schema: z.object({
     title: z.string(),
     description: z.string(),
@@ -13,3 +13,5 @@ const projects = defineCollection({
 export const collections = {
   projects,
 };
+
+export default defineConfig({});

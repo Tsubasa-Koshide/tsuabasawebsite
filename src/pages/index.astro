@@ -3,10 +3,10 @@ import fs from "fs";
 
 const baseDir = "public/photo";
 const projects = fs.readdirSync(baseDir)
-  .filter(folder => fs.statSync(`${baseDir}/${folder}`).isDirectory()) // ✅ フォルダのみ取得
+  .filter(folder => fs.statSync(`${baseDir}/${folder}`).isDirectory())
   .map(folder => ({
     title: folder,
-    thumbnail: `/photo/${folder}/01.jpeg`, // ✅ 01.jpeg をサムネイルに
+    thumbnail: `/photo/${folder}/01.jpeg`,
     slug: folder // ✅ フォルダ名をスラグとして使用
   }));
 ---
@@ -25,43 +25,18 @@ const projects = fs.readdirSync(baseDir)
 
     <!-- 共通のスタイルシートを読み込む -->
     <link rel="stylesheet" href="/css/style.css">
-
-    <style>
-      /* Masonry レイアウト */
-      body {
-        background-color: #F6F6F6;
-        font-family: 'Noto Sans JP', sans-serif;
-        margin: 0; /* ✅ 余白をなくす */
-        padding: 0; /* ✅ 余白をなくす */
-      }
-
-      .masonry-container {
-        column-count: 3; /* ✅ 3列に並べる */
-        column-gap: 5px; /* ✅ 列の間隔を小さくする */
-        width: 100vw; /* ✅ ビューポートの幅いっぱいに広げる */
-        padding: 0;
-        margin: 0;
-      }
-
-      .project-card {
-        display: block;
-        width: 100%;
-        margin-bottom: 5px;
-        break-inside: avoid;
-      }
-
-      .project-card img {
-        width: 100%; /* ✅ 画像の幅を最大化 */
-        height: auto;
-        border: none;
-        box-shadow: none;
-        border-radius: 0;
-      }
-    </style>
 </head>
 
 <body>
-    <header>
+    <header>       
+   <style>
+      /* ボディの背景色を設定 */
+      body {
+        background-color:#F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
+      }
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">/* フォント設定 */
+    </style>
         <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
         <nav>
           <a href="/">Home</a>

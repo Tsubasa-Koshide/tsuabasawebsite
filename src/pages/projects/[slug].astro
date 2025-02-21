@@ -1,5 +1,16 @@
 ---
-import { getEntryBySlug } from 'astro:content';
+import { getCollection, getEntryBySlug } from 'astro:content';
+
+// ✅ getStaticPaths() の定義
+export async function getStaticPaths() {
+  // "projects" コレクションのデータを取得
+  const projects = await getCollection('projects');
+
+  return projects.map((project) => ({
+    params: { slug: project.slug }, // ✅ 各プロジェクトのスラグを指定
+    props: { project: project.data }, // ✅ 各プロジェクトのデータを渡す
+  }));
+}
 
 // ✅ URLのスラグを取得
 const { slug } = Astro.params;
@@ -18,6 +29,7 @@ const images = [
   `/photo/${slug}/03.jpeg`
 ];
 ---
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -27,11 +39,20 @@ const images = [
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>{project?.data?.title}</h1>
-    <p class="project-caption">{project?.data?.caption || "キャプションがありません"}</p> 
+    <header>
+      <h1>{project?.data?.title}</h1>
+    </header>
 
-    <div class="image-gallery">
-      {images.map(image => (
-        <img src={image} alt={project?.data?.title} />
-      ))}
-    </div>
+    <main>
+      <p class="project-caption">{project?.data?.caption || "キャプションがありません"}</p> 
+
+      <div class="image-gallery">
+        {images.map((image) => (
+          <img src={image} alt={project?.data?.title} />
+        ))}
+      </div>
+
+      <a href="/">← ホームへ戻る</a>
+    </main>
+</body>
+</html>
