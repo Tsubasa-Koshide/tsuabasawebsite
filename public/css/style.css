@@ -114,34 +114,29 @@ nav a {
 }
 
 /* スマホ用レスポンシブデザイン */
-  @media (max-width: 768px) {
-    header {
-      padding: 3px 3px; /* 左右の余白を減らしてヘッダーを広げる */
-    }
-    body {
-      padding: 3px 3px; /* 左右の余白を少し縮小して幅を広げる */
-    }
-
-    .section, .about-section, .contact-section {
-      width: 98%; /* スマホではもう少し広げる */
-      margin: 0 auto; /* 中央揃え */
-      padding: 3px 3px; /* 左右のパディングを調整 */
-    }
-  
-  
-    .about-content, .contact-content {
-      max-width: 100%; /* スマホ版では横幅を広げる */
-    }
-
-    .footer {
-      padding: 3px 3px; /* フッターの左右余白を調整 */
-    }
-  
-    nav a {
-      margin-right: 3px; /* スマホ版ではさらにマージンを小さくする */
-    }
-  
+@media (max-width: 768px) {
+  body {
+    padding: 0 10px; /* 左右の余白を狭めて幅を広げる */
   }
+
+  header {
+    padding: 0 10px; /* ヘッダーとボディのpaddingを統一 */
+  }
+
+  .section, .about-section, .contact-section {
+    width: 98%; /* スマホ版で少し広げる */
+    margin: 0 auto; /* 中央揃え */
+    padding: 10px 15px; /* 左右の余白を調整 */
+  }
+
+  .footer {
+    padding: 10px 15px; /* フッターの余白を調整 */
+  }
+
+  nav a {
+    margin-right: 3px; /* スマホ版ではマージンを小さくする */
+  }
+}
 
 /* フォームグループ */
 .form-group {
