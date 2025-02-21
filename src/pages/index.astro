@@ -44,11 +44,10 @@ import ProjectList from "../components/ProjectList.astro";
 <html>
   <body>
 ---
-import { getCollection } from "astro:content";
-import ProjectCard from "../components/ProjectCard.astro";
-
-const projects = await getCollection("projects");
+import MainImage from "../assets/projects/project01/main.jpeg";
 ---
+<img src={MainImage} alt="Project 01" width="600" height="400" />
+
 <html>
   <body>
     <h1>My Projects</h1>
