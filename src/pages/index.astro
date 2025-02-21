@@ -39,27 +39,32 @@
 
     <main>
 ---
-import ProjectList from "../components/ProjectList.astro";
+const images = Object.values(import.meta.glob("../assets/projects/*/01.jpg", { eager: true }));
 ---
-<html>---
-import { getCollection } from "astro:content";
-import ProjectCard from "../components/ProjectCard.astro";
-const images = await Astro.glob("../assets/projects/*/01.jpg");
 
-const projects = await getCollection("projects");
----
-<html>
-  <body>
+<head>
+  <style>
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      padding: 20px;
+    }
+    .grid-container img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+  </style>
+</head>
 
-    <div class="project-list">
-      {projects.map((project, index) => (
-        <ProjectCard
-          title={project.data.title}
-          slug={project.data.slug}
-          description={project.data.description}
-          thumbnail={images[index]}
-        />
-      ))}
-    </div>
-  </body>
+<main>
+  <div class="grid-container">
+    {images.map((img) => (
+      <img src={img.default} alt="Project Image">
+    ))}
+  </div>
+</main>
+
 </html>
