@@ -44,7 +44,7 @@ nav a {
 /* スマホ用レスポンシブデザイン */
 @media (max-width: 768px) {
   nav a {
-    margin-right: px; /* スマホ版ではマージンを小さくする */
+    margin-right: 3px; /* スマホ版ではマージンを小さくする */
   }
 }
 
@@ -134,7 +134,7 @@ nav a {
     }
 
     .footer {
-      padding: 10px 15px; /* フッターの左右余白を調整 */
+      padding: 3px 3px; /* フッターの左右余白を調整 */
     }
   
     nav a {
