@@ -90,12 +90,7 @@ nav a {
   /* その他のスタイル */
 }
 
-/* もしスマホ版で別の指定があれば、それを上書きする */
-@media (max-width: 768px) {
-  .project-card h2 {
-    text-align: left !important; /* 強制的に左寄せ */
-  }
-}
+
 
 /* プロジェクトカード内のリンクから下線を消す */
 .project-card a,
