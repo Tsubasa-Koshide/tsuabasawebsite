@@ -31,6 +31,17 @@ nav a {
   font-size: 10pt;
 }
 
+
+/* リンク要素にマージンを追加 */
+nav a {
+  color: #24140e;
+  text-decoration: none;
+  margin-left: 10px;
+  font-size: 10pt;
+  margin-right: 20px; /* 右側にマージンを追加 */
+}
+
+
 /* テキスト選択時のスタイル */
 *::selection {
   color: #68a9cf; /* 選択したテキストの文字色 */
@@ -98,7 +109,7 @@ nav a {
 /* スマホ用レスポンシブデザイン */
   @media (max-width: 768px) {
     header {
-      padding: 3px 5px; /* 左右の余白を減らしてヘッダーを広げる */
+      padding: 3px 3px; /* 左右の余白を減らしてヘッダーを広げる */
     }
 
     .section, .about-section, .contact-section {
@@ -113,7 +124,7 @@ nav a {
     }
 
     .footer{
-    padding: 3px 5px; /* 余白を調整 */
+    padding: 3px 3px; /* 余白を調整 */
     text-align: left; /* スマホ版では中央寄せ（必要なら） */
   }
   }
