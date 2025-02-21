@@ -125,7 +125,7 @@ nav a {
     .section, .about-section, .contact-section {
       width: 98%; /* スマホではもう少し広げる */
       margin: 0 auto; /* 中央揃え */
-      padding: 10px 15px; /* 左右のパディングを調整 */
+      padding: 3px 3px; /* 左右のパディングを調整 */
     }
   
   
