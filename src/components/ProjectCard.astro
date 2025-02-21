@@ -1,8 +1,10 @@
 ---
+import { Image } from "@astro/image";
+
 const { title, slug, thumbnail, description } = Astro.props;
 ---
 <a href={`/projects/${slug}`} class="project-card">
-  <img src={thumbnail} alt={title} />
+  <Image src={thumbnail} alt={title} width={300} height={200} format="webp" />
   <h3>{title}</h3>
   <p>{description}</p>
 </a>

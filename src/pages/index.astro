@@ -49,11 +49,27 @@ import MainImage from "../assets/projects/project01/main.jpeg";
 <img src={MainImage} alt="Project 01" width="600" height="400" />
 
 <html>
+
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
+import MainImage1 from "../assets/projects/project01/main.jpg";
+import MainImage2 from "../assets/projects/project02/main.jpg";
+import MainImage3 from "../assets/projects/project03/main.jpg";
+
+const projects = await getCollection("projects");
+---
+<html>
   <body>
     <h1>My Projects</h1>
     <div class="project-list">
-      {projects.map((project) => (
-        <ProjectCard {...project.data} />
+      {projects.map((project, index) => (
+        <ProjectCard
+          title={project.data.title}
+          slug={project.data.slug}
+          description={project.data.description}
+          thumbnail={index === 0 ? MainImage1 : index === 1 ? MainImage2 : MainImage3}
+        />
       ))}
     </div>
   </body>
@@ -65,5 +81,6 @@ import MainImage from "../assets/projects/project01/main.jpeg";
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* 3列レイアウト */
     gap: 20px;
   }
+</style>
 </style>
 </html>
