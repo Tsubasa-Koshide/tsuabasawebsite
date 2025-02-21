@@ -29,22 +29,24 @@ const projects = fs.readdirSync(baseDir)
     <style>
       /* Masonry レイアウト */
       body {
-        background-color: #F6F6F6; /* 背景色 */
+        background-color: #F6F6F6;
         font-family: 'Noto Sans JP', sans-serif;
+        margin: 0; /* ✅ 余白をなくす */
+        padding: 0; /* ✅ 余白をなくす */
       }
 
       .masonry-container {
         column-count: 3; /* ✅ 3列に並べる */
-        column-gap: 10px; /* ✅ 列の間隔 */
-        padding: 10px;
-        max-width: 1200px; /* ✅ 最大幅を指定 */
-        margin: auto; /* ✅ 画面中央に配置 */
+        column-gap: 5px; /* ✅ 列の間隔を小さくする */
+        width: 100vw; /* ✅ ビューポートの幅いっぱいに広げる */
+        padding: 0;
+        margin: 0;
       }
 
       .project-card {
-        display: block; /* ✅ `inline-block` ではなく `block` にする */
+        display: block;
         width: 100%;
-        margin-bottom: 10px;
+        margin-bottom: 5px;
         break-inside: avoid;
       }
 
@@ -54,12 +56,6 @@ const projects = fs.readdirSync(baseDir)
         border: none;
         box-shadow: none;
         border-radius: 0;
-      }
-
-      h2 {
-        font-size: 14px;
-        text-align: left;
-        margin-top: 5px;
       }
     </style>
 </head>
@@ -75,6 +71,7 @@ const projects = fs.readdirSync(baseDir)
           <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
         </nav>
     </header>
+
 
     <div class="masonry-container">
       {projects.map(({ title, thumbnail, slug }) => (

@@ -61,18 +61,20 @@ nav a {
 }
 
 .masonry-container {
-  column-count: 3;
-  column-gap: 10px;
-  padding: 10px;
-  max-width: 1200px; /* ✅ 最大幅を指定して3列を維持 */
-  margin: auto; /* ✅ 画面中央に配置 */
+  column-count: 3; /* ✅ 3列に並べる */
+  column-gap: 15px; /* ✅ 列の間隔を小さくする */
+  width: 95%; ✅ ビューポートの幅いっぱいに広げる */
+  padding-left: 20px; /* ✅ 左の余白を調整 */
+  padding-right: 20px; /* ✅ 右の余白を調整 */
+  margin: 10pt auto; /* ✅ 中央揃え & 上下余白 */
 }
 
 .project-card {
-  display: block; /* ✅ `inline-block` ではなく `block` にする */
+  display: block;
   width: 100%;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
   break-inside: avoid;
+  margin: 10pt auto; /* ✅ 中央揃え & 上下余白 */
 }
 
 .project-card img {
@@ -81,6 +83,70 @@ nav a {
   border: none;
   box-shadow: none;
   border-radius: 0;
+}
+
+/* ✅ 画像の下のタイトルを10ptにする */
+.project-card a {
+  text-decoration: none; /* ✅ 下線を削除 */
+  color: black; /* ✅ 文字色を黒に変更 */
+  font-size: 10pt; /* ✅ フォントサイズを維持 */
+}
+
+.project-card h2 {
+  font-size: 10pt; /* ✅ フォントサイズを指定 */
+  text-align: left; /* ✅ 左揃え */
+  margin: 3px 0; /* ✅ 適度な間隔 */
+  font-weight: normal;
+  color: black;
+}
+
+.image-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+}
+
+.image-gallery img {
+  width: 100%;
+  max-width: 400px; /* ✅ すべての画像の幅を最大400pxに統一 */
+  height: auto;
+  object-fit: cover; /* ✅ 画像が変形しないようにする */
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+.project-caption {
+  font-size: 12pt;
+  color: #000000;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+@media (max-width: 768px) {
+  .masonry-container {
+    column-count: 1; /* ✅ スマホ版では1列に変更 */
+    column-gap: 10px; /* ✅ 適度な間隔を確保 */
+    width: 100%; /* ✅ 横幅を画面いっぱいに */
+    padding-left: 10px; /* ✅ 左の余白を調整 */
+    padding-right: 10px; /* ✅ 右の余白を調整 */
+  }
+
+  .project-card {
+    width: 100%; /* ✅ 画像の幅を最大化 */
+    margin-bottom: 10px; /* ✅ 下の余白を確保 */
+  }
+
+  .project-card img {
+    width: 100%; /* ✅ 画像を親要素いっぱいに */
+    height: auto;
+  }
+
+  .project-card h2 {
+    font-size: 12pt; /* ✅ フォントサイズを少し大きめに */
+    text-align: center; /* ✅ タイトルを中央揃え */
+  }
 }
 
 

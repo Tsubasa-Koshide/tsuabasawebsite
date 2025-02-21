@@ -1,54 +1,37 @@
 ---
-import fs from "fs";
-import path from "path";
+import { getEntryBySlug } from 'astro:content';
 
-export function getStaticPaths() {
-  const baseDir = path.resolve("public/photo");
-
-  if (!fs.existsSync(baseDir)) {
-    console.error("❌ Error: public/photo ディレクトリが見つかりません！");
-    return [];
-  }
-
-  const projects = fs.readdirSync(baseDir)
-    .filter(folder => fs.statSync(path.join(baseDir, folder)).isDirectory());
-
-  return projects.map(slug => ({
-    params: { slug } // ✅ `params.slug` を明示的に設定
-  }));
-}
-
-// ✅ `Astro.params.slug` を確実に取得
+// ✅ URLのスラグを取得
 const { slug } = Astro.params;
 
-if (!slug) {
-  throw new Error("❌ Error: slug is undefined. Check if the URL is correct.");
+// ✅ スラグに対応するプロジェクトデータを取得
+const project = await getEntryBySlug('projects', slug);
+
+if (!project) {
+  throw new Error(`🚨 Project "${slug}" not found`);
 }
 
-const imageDir = path.resolve(`public/photo/${slug}`);
-const images = fs.existsSync(imageDir)
-  ? fs.readdirSync(imageDir)
-      .filter(file => file.endsWith(".jpeg") || file.endsWith(".jpg"))
-      .map(file => `/photo/${slug}/${file}`)
-  : [];
+// ✅ 画像リストを作成
+const images = [
+  `/photo/${slug}/01.jpeg`,
+  `/photo/${slug}/02.jpeg`,
+  `/photo/${slug}/03.jpeg`
+];
 ---
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="utf-8" />
-    <title>{slug} の詳細</title> <!-- ✅ ここでのみ slug を使用！ -->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{project?.data?.title || "プロジェクト詳細"}</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1>{slug}</h1>
+    <h1>{project?.data?.title}</h1>
+    <p class="project-caption">{project?.data?.caption || "キャプションがありません"}</p> 
+
     <div class="image-gallery">
-      {images.length > 0 ? (
-        images.map(image => <img src={image} alt={slug} />)
-      ) : (
-        <p>画像が見つかりませんでした。</p>
-      )}
+      {images.map(image => (
+        <img src={image} alt={project?.data?.title} />
+      ))}
     </div>
-    <a href="/">← 戻る</a>
-</body>
-</html>
