@@ -44,7 +44,7 @@ nav a {
 /* スマホ用レスポンシブデザイン */
 @media (max-width: 768px) {
   nav a {
-    margin-right: 5px; /* スマホ版ではマージンを小さくする */
+    margin-right: 3px; /* スマホ版ではマージンを小さくする */
   }
 }
 
@@ -121,7 +121,7 @@ nav a {
 
     .section, .about-section, .contact-section {
       width: 95%; /* スマホではもう少し広げる */
-      margin: 0 auto; /* 中央揃え */
+      margin: left; /* 中央揃え */
     }
   
   
