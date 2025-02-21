@@ -1,5 +1,8 @@
 ---
-const images = import.meta.glob("../assets/projects/*/01.jpg", { eager: true });
+console.log("Astro script is running!");
+const images = import.meta.glob("../src/assets/projects/*/01.jpg", { eager: true });
+console.log("Loaded images:", images);
+console.log("Image keys:", Object.keys(images));
 ---
 
 <!DOCTYPE html>
@@ -53,8 +56,11 @@ const images = import.meta.glob("../assets/projects/*/01.jpg", { eager: true });
 
     <main>
       <div class="grid-container">
-        {Object.values(images).map((img) => (
-          <img src={img.default || img} alt="Project Image">
+        {Object.values(images).map((img, index) => (
+          <div key={index}>
+            <p>Image Path: {img.default}</p>  <!-- 画像のパスを表示 -->
+            <img src={img.default} alt="Project Image">
+          </div>
         ))}
       </div>
     </main>
