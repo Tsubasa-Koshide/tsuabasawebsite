@@ -84,15 +84,28 @@ nav a {
   box-shadow: none;
   border-radius: 0;
 }
+/* PC共通: 左寄せにする */
+.project-card h2 {
+  text-align: left; 
+  /* その他のスタイル */
+}
 
+/* もしスマホ版で別の指定があれば、それを上書きする */
+@media (max-width: 768px) {
+  .project-card h2 {
+    text-align: left !important; /* 強制的に左寄せ */
+  }
+}
+
+/* プロジェクトカード内のリンクから下線を消す */
 .project-card a,
 .project-card a:link,
 .project-card a:visited,
 .project-card a:hover,
-.project-card a:active,
-.project-card a:focus {
-  text-decoration: none;
-  color: #000;
+.project-card a:focus,
+.project-card a:active {
+  text-decoration: none; 
+  color: #000; /* お好みの文字色 */
 }
 
 /* ✅ 画像の下のタイトルを10ptにする */
