@@ -1,8 +1,16 @@
 ---
-console.log("Astro script is running!");
-const images = import.meta.glob("../src/assets/projects/*/01.jpg", { eager: true });
-console.log("Loaded images:", images);
-console.log("Image keys:", Object.keys(images));
+console.log("✅ Astro script is running!");
+
+// `images` をフロントエンドでも使えるように `export` する
+export const images = import.meta.glob("../src/assets/projects/*/01.jpg", { eager: true });
+
+console.log("🖼 Loaded images (Server):", images);
+console.log("🗝 Image keys:", Object.keys(images));
+
+Object.values(images).forEach((img, index) => {
+  console.log(`🔹 Image ${index}:`, img);
+  console.log(`🌟 Image ${index} default:`, img?.default);
+});
 ---
 
 <!DOCTYPE html>
@@ -41,8 +49,7 @@ console.log("Image keys:", Object.keys(images));
       }
     </style>
   </head>
-  
-  <body>
+
     <header>
       <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
       <nav>
@@ -64,5 +71,10 @@ console.log("Image keys:", Object.keys(images));
         ))}
       </div>
     </main>
+<script>
+  // `Astro.props.images` をフロントエンドで取得
+  const images = {Astro.props.images};
+  console.log("🖼 Client-side Loaded images:", images);
+</script>
   </body>
 </html>
