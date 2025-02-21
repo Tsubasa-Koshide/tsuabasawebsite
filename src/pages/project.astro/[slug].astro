@@ -1,0 +1,19 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const { slug } = Astro.params;
+const project = projects.find((p) => p.slug === slug);
+
+if (!project) {
+  throw new Error("Project not found");
+}
+---
+<html>
+  <body>
+    <h1>{project.data.title}</h1>
+    <img src={project.data.image} alt={project.data.title} />
+    <p>{project.data.description}</p>
+    <a href="/">Back to Projects</a>
+  </body>
+</html>
