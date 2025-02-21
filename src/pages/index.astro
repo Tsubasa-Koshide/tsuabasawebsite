@@ -41,9 +41,7 @@
 ---
 import ProjectList from "../components/ProjectList.astro";
 ---
-<html>
-  <body>
----
+<html>---
 import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
 const images = await Astro.glob("../assets/projects/*/main.jpg");
@@ -64,5 +62,4 @@ const projects = await getCollection("projects");
       ))}
     </div>
   </body>
-
 </html>
