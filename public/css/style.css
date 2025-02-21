@@ -122,7 +122,7 @@ nav a {
     .section, .about-section, .contact-section {
       width: 95%; /* スマホではもう少し広げる */
       margin: 0 auto; /* 中央揃え */
-      padding: 3px; /* スペースを調整 */
+      padding: 10px 20px; /* スペースを調整 */
     }
   
   
@@ -131,7 +131,7 @@ nav a {
     }
 
     .footer{
-    padding: 3px 3px; /* 余白を調整 */
+    padding: 10px 20px; /* 余白を調整 */
     text-align: left; /* スマホ版では中央寄せ（必要なら） */
   }
   }
