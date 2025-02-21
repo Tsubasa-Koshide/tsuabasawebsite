@@ -40,13 +40,13 @@
     <main>
 
 ---
-const images = Object.values(import.meta.glob("/src/assets/projects/*/01.jpg", { eager: true }));
+const images = import.meta.glob("../assets/projects/*/01.jpg", { eager: true });
 ---
 
 <main>
   <div class="grid-container">
-    {images.map((img) => (
-      <img src={img.default || img} alt="Project Image">
+    {Object.values(images).map((img) => (
+      <img src={img.default} alt="Project Image">
     ))}
   </div>
 </main>
