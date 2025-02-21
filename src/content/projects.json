@@ -1,0 +1,92 @@
+[
+    {
+      "title": "CGI: artworks",
+      "description": "これはプロジェクト01の説明です。",
+      "image": "/photo/project01/01.jpeg",
+      "slug": "project01"
+    },
+    {
+      "title": "concept:Future sole 2040",
+      "description": "これはプロジェクト02の説明です。",
+      "image": "/photo/project02/01.jpeg",
+      "slug": "project02"
+    },
+    {
+        "title": "concept: long distance car",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project03/01.jpeg",
+        "slug": "project03"
+      },
+    {
+        "title": "concept: Mini-nyan!",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project04/01.jpeg",
+        "slug": "project04"
+      },
+      {
+        "title": "Product: Messa luna",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project05/01.jpeg",
+        "slug": "project05"
+      },
+      {
+        "title": "FRAMEs: OJIYU model",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project06/01.jpeg",
+        "slug": "project06"
+      },
+      {
+        "title": "FRAMEs: Komatsu Tasuku model",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project07/01.jpeg",
+        "slug": "project07"
+      },
+      {
+        "title": "FRAMEs: Takita Saki model8",
+        "description": "これはプロジェクト02の説明です。",
+        "image": "/photo/project08/01.jpeg",
+        "slug": "project08"
+      },
+      {
+        "title": "FRAMEs: millitsuka model",
+        "description": "これはプロジェクト09の説明です。",
+        "image": "/photo/project09/01.jpeg",
+        "slug": "project09"
+      },
+      {
+        "title": "FRAMEs: Arai Kiriko model",
+        "description": "これはプロジェクト10の説明です。",
+        "image": "/photo/project10/01.jpeg",
+        "slug": "project10"
+      },
+      {
+        "title": "CGI: risograph",
+        "description": "これはプロジェクト11の説明です。",
+        "image": "/photo/project11/01.jpeg",
+        "slug": "project11"
+      },
+      {
+        "title": "FRAMEs: millitsuka model",
+        "description": "これはプロジェクト12の説明です。",
+        "image": "/photo/project12/01.jpeg",
+        "slug": "project12"
+      },
+      {
+        "title": "FRAMEs: Yoneyama Mai model",
+        "description": "これはプロジェクト13の説明です。",
+        "image": "/photo/project13/01.jpeg",
+        "slug": "project13"
+      },
+      {
+        "title": "CGI: Kasumigaseki ART STREET MUESEN",
+        "description": "これはプロジェクト14の説明です。",
+        "image": "/photo/project14/01.jpeg",
+        "slug": "project14"
+      },
+      {
+        "title": "FRAMEs: AAMY model",
+        "description": "これはプロジェクト15の説明です。",
+        "image": "/photo/project15/01.jpeg",
+        "slug": "project15"
+      } 
+  ]

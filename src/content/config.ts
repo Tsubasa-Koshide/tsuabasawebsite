@@ -1,17 +1,6 @@
-import { defineConfig } from 'astro/config';
-import { defineCollection, z } from '@astro/content';
+import { defineConfig } from 'astro/content';
+import content from '@astro/content';
 
-const projects = defineCollection({
-  schema: z.object({
-    title: z.string(),
-    description: z.string(),
-    image: z.string(),
-    slug: z.string(),
-  }),
+export default defineConfig({
+  integrations: [content()],
 });
-
-export const collections = {
-  projects,
-};
-
-export default defineConfig({});

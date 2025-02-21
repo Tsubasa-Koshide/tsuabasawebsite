@@ -1,60 +1,49 @@
 ---
-import fs from "fs";
-
-const baseDir = "public/photo";
-const projects = fs.readdirSync(baseDir)
-  .filter(folder => fs.statSync(`${baseDir}/${folder}`).isDirectory())
-  .map(folder => ({
-    title: folder,
-    thumbnail: `/photo/${folder}/01.jpeg`,
-    slug: folder // ✅ フォルダ名をスラグとして使用
-  }));
+import projects from "../content/projects.json";
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/new favicon.svg" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content="Astro.generator" />
-    <title>Tsubasa Koshide website</title>
+  <meta charset="utf-8" />
+  <link rel="icon" type="image/svg+xml" href="/new favicon.svg" />
+  <meta name="viewport" content="width=device-width" />
+  <meta name="generator" content="Astro.generator" />
+  <title>Tsubasa Koshide website</title>
 
-    <!-- Google Fonts から Noto Sans をインポート -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+  
+  <!-- 共通のスタイルシート -->
+  <link rel="stylesheet" href="/css/style.css">
 
-    <!-- 共通のスタイルシートを読み込む -->
-    <link rel="stylesheet" href="/css/style.css">
+  <style>
+    /* 背景色などのスタイル */
+    body {
+      background-color: #F6F6F6;
+    }
+    /* その他必要なCSSをここに記述 */
+  </style>
 </head>
-
 <body>
-    <header>       
-   <style>
-      /* ボディの背景色を設定 */
-      body {
-        background-color:#F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
-      }
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">/* フォント設定 */
-    </style>
-        <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
-        <nav>
-          <a href="/">Home</a>
-          <a href="/about/">About</a>
-          <a href="/contact/">Contact</a>
-          <a href="https://takstudio.base.shop/" target="_blank" rel="noopener noreferrer">Shop</a>
-          <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
-        </nav>
-    </header>
+  <header>
+    <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Contact</a>
+      <a href="https://takstudio.base.shop/" target="_blank" rel="noopener noreferrer">Shop</a>
+      <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
+    </nav>
+  </header>
 
-
-    <div class="masonry-container">
-      {projects.map(({ title, thumbnail, slug }) => (
-        <a href={`/projects/${slug}`} class="project-card">
-          <img src={thumbnail} alt={title} />
-          <h2>{title}</h2>
-        </a>
-      ))}
-    </div>
+  <div class="masonry-container">
+    {projects.map((project) => (
+      <a href={`/projects/${project.slug}`} class="project-card">
+        <img src={project.image} alt={project.title} />
+        <h2>{project.title}</h2>
+      </a>
+    ))}
+  </div>
 </body>
 </html>
