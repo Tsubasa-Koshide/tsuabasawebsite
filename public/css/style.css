@@ -41,6 +41,11 @@ nav a {
   margin-right: 40px; /* 右側にマージンを追加 */
 }
 
+@media (max-width: 768px) {
+  nav a {
+    margin-right: 5px; /* スマホ版ではマージンを小さくする */
+  }
+}
 
 
 
