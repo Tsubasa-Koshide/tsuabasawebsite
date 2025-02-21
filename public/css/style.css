@@ -31,6 +31,17 @@ nav a {
   font-size: 10pt;
 }
 
+/* テキスト選択時のスタイル */
+*::selection {
+  color: #68a9cf; /* 選択したテキストの文字色 */
+}
+
+/* Firefox用の選択スタイル */
+*::-moz-selection {
+  background: #68a9cf; /* 選択したテキストの背景色 */
+  color: white; /* 選択したテキストの文字色 */
+}
+
 /* About・Contactページのコンテンツを左寄せ */
 .section, .about-section, .contact-section {
   max-width: 800px;
@@ -155,4 +166,14 @@ nav a {
   padding: 10px 40px;
   width: 100%;
   font-size: 10pt;
+}
+
+/* WebKit系（Chrome, Safari） */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: none;
 }
