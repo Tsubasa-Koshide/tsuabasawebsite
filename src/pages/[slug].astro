@@ -1,0 +1,22 @@
+---
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const { slug } = Astro.params;
+const project = projects.find((p) => p.data.slug === slug);
+---
+
+<html>
+  <head>
+    <title>{project.data.title}</title>
+  </head>
+  <body>
+    <h1>{project.data.title}</h1>
+    <img src={project.data.image} alt={project.data.title} />
+    <p>{project.data.description}</p>
+    <article>
+      <Markdown>{project.body}</Markdown>
+    </article>
+    <a href="/">← 戻る</a>
+  </body>
+</html>
