@@ -41,12 +41,7 @@ nav a {
   margin-right: 40px; /* 右側にマージンを追加 */
 }
 
-/* スマホ用レスポンシブデザイン */
-@media (max-width: 768px) {
-  nav a {
-    margin-right: 3px; /* スマホ版ではマージンを小さくする */
-  }
-}
+
 
 
 /* テキスト選択時のスタイル */
