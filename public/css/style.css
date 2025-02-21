@@ -147,8 +147,6 @@ nav a {
     column-count: 1; /* ✅ スマホ版では1列に変更 */
     column-gap: 10px; /* ✅ 適度な間隔を確保 */
     width: 100%; /* ✅ 横幅を画面いっぱいに */
-    padding-left: 10px; /* ✅ 左の余白を調整 */
-    padding-right: 10px; /* ✅ 右の余白を調整 */
   }
 
   .project-card {
