@@ -1,5 +1,6 @@
 ---
-import projects from "../content/projects.json";
+import projects from "../data/projects.js";
+console.log("Projects: ", projects);
 ---
 
 <!DOCTYPE html>
@@ -10,46 +11,45 @@ import projects from "../content/projects.json";
   <meta name="viewport" content="width=device-width" />
   <meta name="generator" content="Astro.generator" />
   <title>Tsubasa Koshide website</title>
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-  
-  <!-- 共通のスタイルシート -->
-  <link rel="stylesheet" href="/css/style.css">
+ 
+    <!-- 共通のスタイルシートを読み込む -->
+    <link rel="stylesheet" href="/css/style.css">
 
-  <style>
-    /* 背景色などのスタイル */
-    body {
-      background-color: #F6F6F6;
-    }
-    /* その他必要なCSSをここに記述 */
-  </style>
-</head>
-<body>
-  <header>
-    <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
-    <nav>
+  </head>
+  <body>
+    <header>
+        <style>
+      /* ボディの背景色を設定 */
+      body {
+        background-color: #F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
+      }
+          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">/* フォント設定 */
+    </style>
+       <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
+      <nav>
       <a href="/">Home</a>
       <a href="/about/">About</a>
       <a href="/contact/">Contact</a>
       <a href="https://takstudio.base.shop/" target="_blank" rel="noopener noreferrer">Shop</a>
       <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
-    </nav>
-  </header>
-
-  <div class="masonry-container">
-    {projects.map((project) => (
-      <a href={`/projects/${project.slug}`} class="project-card">
-        <img src={project.image[0]} alt={project.title} />
-        <h2>{project.title}</h2>
-      </a>
-    ))}
-  </div>
+      </nav>
+    </header>
 
   
+<div class="masonry-container">
+  {projects.map((project) => (
+    <a href={`/projects/${project.slug}`} class="project-card">
+      <img src={project.image[0].src} alt={project.title} />
+      <h2>{project.title}</h2>
+    </a>
+  ))}
+</div>
+  
   <footer class="footer">
-    <p>©tsubasa koshide 2025</p>
+    <p>© tsubasa koshide 2025</p>
   </footer>
-
 </body>
 </html>

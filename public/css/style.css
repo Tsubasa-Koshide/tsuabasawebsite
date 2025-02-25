@@ -90,7 +90,10 @@ nav a {
   /* その他のスタイル */
 }
 
-
+/* プロジェクトカード全体のリンクから下線を削除 */
+.project-card {
+  text-decoration: none;
+}
 
 /* プロジェクトカード内のリンクから下線を消す */
 .project-card a,
@@ -108,29 +111,27 @@ nav a {
   text-decoration: none; /* ✅ 下線を削除 */
   color: black; /* ✅ 文字色を黒に変更 */
   font-size: 10pt; /* ✅ フォントサイズを維持 */
+  font-weight: 800;       /* 少し重いフォントウェイト */
+  margin-bottom: 10px;   /* 画像の下に10pxの余白を追加 */
 }
 
 .project-card h2 {
   font-size: 10pt; /* ✅ フォントサイズを指定 */
+  font-weight: 800;       /* 少し重いフォントウェイト */
   text-align: left; /* ✅ 左揃え */
-  margin: 3px 0; /* ✅ 適度な間隔 */
+  margin: 0; /*適度な間隔 */
   font-weight: normal;
   color: black;
+  margin-bottom: 30px;   /* 画像の下に10pxの余白を追加 */
 }
 
-.image-gallery {
+.project-image {
   display: flex;
   flex-direction: column; /* 縦に並べる */
-  gap: 30px;              /* 画像同士の隙間を30px */
+  gap: 50px;              /* 画像同士の隙間を30px */
   margin: 0 auto;         /* 中央寄せ */
   max-width: 800px;       /* 画像の最大横幅を800pxにしたい例 */
   width: 100%;            /* 画面が狭いときは縮小 */
-}
-
-.gallery-item {
-  width: 100%;
-  height: auto;
-  display: block;
 }
 
 .project-caption {

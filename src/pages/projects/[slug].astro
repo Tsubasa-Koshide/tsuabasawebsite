@@ -1,52 +1,58 @@
 ---
-import projects from "../../content/projects.json";
+import projects from "../../data/projects.js";
 
 export async function getStaticPaths() {
-  return projects.map((project) => {
-    return {
-      params: { slug: project.slug },
-      props: { project },
-    };
-  });
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
 }
 
 export async function get({ props }) {
-  return {
-    props: {
-      project: props.project,
-    },
-  };
+  return { props: { project: props.project } };
 }
 
 const { project } = Astro.props;
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/new favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content="Astro.generator" />
-    <title>TsubasaKoshide website</title>
+    <title>{project.title} - Tsubasa Koshide</title>
 
     <!-- Google Fonts から Noto Sans をインポート -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
     
-    <!-- 共通のスタイルシートを読み込む -->
+    <!-- 共通のスタイルシート -->
     <link rel="stylesheet" href="/css/style.css">
+         <style>
+      /* ボディの背景色を設定 */
+      body {
+        background-color: #F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
+      }   
+    <!-- 追加スタイル：画像の幅を統一、縦一列に並べる -->
+    <style>
+      .project-images {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;             /* 画像間の隙間を30pxに */
+        margin: left;
+        max-width: 800px;      /* 画像の最大横幅を800pxに */
+        width: 100%;           /* 画面が狭い場合は幅を自動調整 */
+      }
+      .project-images img {
+        width: 60%;           /* 親要素に合わせて横幅を統一 */
+        height: auto;          /* アスペクト比を保つ */
+        display: block;
+      }
+    </style>
   </head>
   <body>
     <header>
-      <style>
-        /* ボディの背景色を設定 */
-        body {
-          background-color: #F6F6F6; /* 背景色を#F6F6F6（淡い黄色）に設定 */
-        }
-        /* 以下はフォント設定。通常はhead内のlinkタグで設定しているため、ここでの記述は不要です */
-        /* <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
-           <link rel="stylesheet" href="style.css"> */
-      </style>
       <h1 class="noto-sans-jp-header">Tsubasa Koshide</h1>
       <nav>
         <a href="/">Home</a>
@@ -56,27 +62,21 @@ const { project } = Astro.props;
         <a href="https://takstudio.tokyo/" target="_blank" rel="noopener noreferrer">TAK Studio</a>
       </nav>
     </header>
-<main>
-  <h1>{project.title}</h1>
-  <p style="white-space: pre-line;">{project.description}</p>
-  <div class="image-gallery">
-    {project.image?.map((imgPath, i) => (
-      <img
-        key={i}
-        src={imgPath}
-        alt={`${project.title} image ${i + 1}`}
-        class="gallery-item"
-        style="max-width: 100%; height: auto; display: block; margin: 0 auto;"
-      />
-    ))}
-  </div>
-</main>
 
-  <footer class="footer">
-    <p>©tsubasa koshide 2025</p>
-  </footer>
+    <main>
+      <h1>{project.title}</h1>
+      <p style="white-space: pre-line;">{project.description}</p>
+      
+      <!-- すべての画像をループで表示。各画像はオブジェクトなので、.src を参照 -->
+      <div class="project-images">
+        {project.image?.map((img, index) => (
+          <img key={index} src={img.src} alt={`${project.title} image ${index + 1}`} />
+        ))}
+      </div>
+    </main>
 
-
-
+    <footer class="footer">
+      <p>© tsubasa koshide 2025</p>
+    </footer>
   </body>
 </html>
