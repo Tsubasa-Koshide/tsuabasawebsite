@@ -227,6 +227,11 @@ nav a {
   font-size: 10pt;
 }
 
+.footer-link {
+  text-decoration: none; /* 下線を消す */
+  color: inherit;        /* 親要素の文字色を継承 */
+}
+
 /* WebKit系（Chrome, Safari） */
 ::-webkit-scrollbar {
   display: none;
