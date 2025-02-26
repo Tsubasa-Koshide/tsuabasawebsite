@@ -116,7 +116,7 @@ export default [
     slug: "project07"
   },
   {
-    title: "FRAMEs: Takita Saki model8",
+    title: "FRAMEs: Takita Saki model",
     description: "Collaboration with Takita Saki\nClient R11R\nExhibition at PARCO Ikebukuro\n2024-",
     image: [p08_01, p08_02],
     slug: "project08"
