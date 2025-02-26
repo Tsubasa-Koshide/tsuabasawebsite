@@ -1,12 +1,13 @@
 // api/submit-contact.js
-const nodemailer = require("nodemailer");
+import nodemailer from "nodemailer";
 
-module.exports = async (req, res) => {
+export default async function handler(req, res) {
   if (req.method !== "POST") {
-    return res.status(405).send("Method Not Allowed");
+    res.status(405).send("Method Not Allowed");
+    return;
   }
 
-  // POSTデータを取得（JSONの場合）
+  // POSTデータのパース（JSON形式を想定）
   let data;
   try {
     data = JSON.parse(req.body);
@@ -16,20 +17,20 @@ module.exports = async (req, res) => {
 
   const { name, email, budget, deadline, yourChoice, message } = data;
 
-  // Nodemailer のトランスポーター設定（例: Gmail）
+  // nodemailer のトランスポーター設定（例：Gmail）
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "koshidetsubasa@gmail.com",         // ご自身の Gmail アカウント
-      pass: "Usagi0141",             // アプリパスワード
+      user: "koshidetsubasa@gmail.com",        // あなたの Gmail アカウント
+      pass: "Usagi0141     // アプリパスワードまたは適切な認証情報
     },
   });
 
-  // サイトオーナーへ送るメール
+  // サイトオーナーへのメール
   const ownerMailOptions = {
     from: '"Website Contact" <yourgmail@gmail.com>',
-    to: "koshidetsubasa@gmail.com", // 受信先
-    subject: `新しいお問い合わせ: ${name}`,
+    to: "koshidetsubasa@gmail.com",
+    subject: `新規お問い合わせ: ${name}`,
     text: `
 お名前: ${name}
 メール: ${email}
@@ -50,24 +51,21 @@ ${message}
 ${name} 様、
 
 お問い合わせいただきありがとうございます。
-こちらから追ってご連絡いたしますので、しばらくお待ちください。
+追ってご連絡いたしますので、しばらくお待ちください。
 
--- 
+--
 Tsubasa Koshide
-TAK.STUDIO
-https://takstudio.tokyo/
-〒136-0072 東京都江東区大島6-26-7 大友ビル3F ARKE内 
-6-26-7 Ohtomo-building 3F ARKE, Ohshima, Ko-to-ku, Tokyo, 136-0072 JAPAN
-CELL +81 (0)80 5251 8548
     `,
   };
 
   try {
+    // サイトオーナーへのメール送信
     await transporter.sendMail(ownerMailOptions);
+    // 自動返信メール送信
     await transporter.sendMail(replyMailOptions);
     res.status(200).json({ message: "メール送信に成功しました" });
   } catch (error) {
     console.error("メール送信エラー:", error);
     res.status(500).json({ error: "メール送信に失敗しました" });
   }
-};
+}
