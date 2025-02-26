@@ -169,6 +169,10 @@ nav a {
   color: #24140e;
   white-space: pre-line !important;
 }
+.instagram-link {
+  text-decoration: none; /* 下線を消す */
+  color: inherit;        /* 親要素の文字色を継承 */
+}
 
 
 .contact-form {
