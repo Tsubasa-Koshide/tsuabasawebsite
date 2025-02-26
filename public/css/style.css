@@ -117,7 +117,7 @@ nav a {
 .project-image {
   display: flex;
   flex-direction: column; /* 縦に並べる */
-  gap: 15px;    /* 画像同士の隙間を30px */
+  gap: 20px;  /* 画像同士の隙間を30px */
   margin: left;      /* 中央寄せ */
   max-width: 800px;       /* 画像の最大横幅を800pxにしたい例 */
   width: 100%;            /* 画面が狭いときは縮小 */
