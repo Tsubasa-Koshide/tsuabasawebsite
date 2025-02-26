@@ -22,7 +22,7 @@ export default async function handler(req, res) {
     service: "Gmail",
     auth: {
       user: "koshidetsubasa@gmail.com",        // あなたの Gmail アカウント
-      pass: "Usagi0141     // アプリパスワードまたは適切な認証情報
+      pass: "Usagi0141",   // アプリパスワードまたは適切な認証情報
     },
   });
 
