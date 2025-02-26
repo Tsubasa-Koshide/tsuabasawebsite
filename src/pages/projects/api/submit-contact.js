@@ -1,32 +1,24 @@
-// api/submit-contact.js
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
   if (req.method !== "POST") {
-    res.status(405).send("Method Not Allowed");
-    return;
+    return res.status(405).send("Method Not Allowed");
   }
 
-  // POSTデータのパース（JSON形式を想定）
-  let data;
-  try {
-    data = JSON.parse(req.body);
-  } catch (error) {
-    return res.status(400).send("Invalid JSON");
-  }
-
+  // フォームデータを受け取る
+  const data = JSON.parse(req.body);
   const { name, email, budget, deadline, yourChoice, message } = data;
 
-  // nodemailer のトランスポーター設定（例：Gmail）
+  // nodemailer 設定
   const transporter = nodemailer.createTransport({
     service: "Gmail",
     auth: {
-      user: "koshidetsubasa@gmail.com",        // あなたの Gmail アカウント
-      pass: "Usagi0141",   // アプリパスワードまたは適切な認証情報
+      user: "koshidetsubasa@gmail.com",
+      pass: "Usagi0141",
     },
   });
 
-  // サイトオーナーへのメール
+  // サイトオーナーに送るメール
   const ownerMailOptions = {
     from: '"Website Contact" <yourgmail@gmail.com>',
     to: "koshidetsubasa@gmail.com",
@@ -59,9 +51,7 @@ Tsubasa Koshide
   };
 
   try {
-    // サイトオーナーへのメール送信
     await transporter.sendMail(ownerMailOptions);
-    // 自動返信メール送信
     await transporter.sendMail(replyMailOptions);
     res.status(200).json({ message: "メール送信に成功しました" });
   } catch (error) {
