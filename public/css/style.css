@@ -253,12 +253,12 @@ nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* フッターのスタイル */
 .footer {
   background-color: transparent;
   color: black;
   text-align: left;
-  width: 100%;
+  width: calc(100% - 40px); /* ヘッダーと同じ幅 */
+  margin: 0 auto;         /* 中央寄せ */
   font-size: 10pt;
 }
 
