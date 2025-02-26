@@ -68,7 +68,7 @@ const { project } = Astro.props;
       <p style="white-space: pre-line;">{project.description}</p>
       
       <!-- すべての画像をループで表示。各画像はオブジェクトなので、.src を参照 -->
-      <div class="project-images">
+      <div class="project-image">
         {project.image?.map((img, index) => (
           <img key={index} src={img.src} alt={`${project.title} image ${index + 1}`} />
         ))}

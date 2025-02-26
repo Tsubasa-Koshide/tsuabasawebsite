@@ -95,17 +95,6 @@ nav a {
   text-decoration: none;
 }
 
-/* プロジェクトカード内のリンクから下線を消す */
-.project-card a,
-.project-card a:link,
-.project-card a:visited,
-.project-card a:hover,
-.project-card a:focus,
-.project-card a:active {
-  text-decoration: none; 
-  color: #000; /* お好みの文字色 */
-}
-
 /* ✅ 画像の下のタイトルを10ptにする */
 .project-card a {
   text-decoration: none; /* ✅ 下線を削除 */
@@ -128,8 +117,8 @@ nav a {
 .project-image {
   display: flex;
   flex-direction: column; /* 縦に並べる */
-  gap: 100px;         /* 画像同士の隙間を30px */
-  margin: 0 auto;         /* 中央寄せ */
+  gap: 15px;    /* 画像同士の隙間を30px */
+  margin: left;      /* 中央寄せ */
   max-width: 800px;       /* 画像の最大横幅を800pxにしたい例 */
   width: 100%;            /* 画面が狭いときは縮小 */
 }
@@ -140,30 +129,6 @@ nav a {
   text-align: center;
   text-decoration: none; /* 下線を消す */
   margin-bottom: 30px; /* 文字の下に10pxのマージンを追加 */
-}
-
-
-@media (max-width: 768px) {
-  .masonry-container {
-    column-count: 1; /* ✅ スマホ版では1列に変更 */
-    column-gap: 10px; /* ✅ 適度な間隔を確保 */
-    width: 100%; /* ✅ 横幅を画面いっぱいに */
-  }
-
-  .project-card {
-    width: 100%; /* ✅ 画像の幅を最大化 */
-    margin-bottom: 10px; /* ✅ 下の余白を確保 */
-  }
-
-  .project-card img {
-    width: 100%; /* ✅ 画像を親要素いっぱいに */
-    height: auto;
-  }
-
-  .project-card h2 {
-    font-size: 12pt; /* ✅ フォントサイズを少し大きめに */
-    text-align: center; /* ✅ タイトルを中央揃え */
-  }
 }
 
 
@@ -299,4 +264,44 @@ html {
   nav a {
     margin-right: 3px; /* スマホ版ではマージンを小さくする */
   }
+
+  .masonry-container {
+    column-count: 1;
+    column-gap: 10px;
+    width: 100%; /* ボディを画面いっぱいに広げる */
+    margin: 0 auto;       /* これで中央寄せ */
+    padding: 0;             /* 必要ならパディングをリセット */
+  }
+  .project-card {
+    width: 100%; /* ✅ 画像の幅を最大化 */
+    margin-bottom: 10px; /* ✅ 下の余白を確保 */
+  }
+
+  .project-card img {
+    width: 100%; /* ✅ 画像を親要素いっぱいに */
+    height: auto;
+  }
+
+  .project-card h2 {
+    font-size: 10pt; /* ✅ フォントサイズを少し大きめに */
+    text-align: left; /* ✅ タイトルを中央揃え */
+  }
+  .project-image {
+    margin: left;/* 中央寄せ */
+    width: 100%;
+    margin: 0 auto;       /* これで中央寄せ */
+    padding: 0;             /* 必要ならパディングをリセット */
+  }
+
+  .main-inner {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;             /* 必要ならパディングをリセット */
+  }
+  .footer {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;   
+  }
+    
 }
