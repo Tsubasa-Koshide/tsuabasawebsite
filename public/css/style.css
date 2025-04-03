@@ -222,6 +222,13 @@ nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-bottom: 1px solid #68a9cf; /* 下線のスタイルはそのまま */
+  outline: none; /* フォーカスリングを消す */
+}
+
 .footer {
   background-color: transparent;
   color: black;
